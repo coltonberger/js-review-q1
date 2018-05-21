@@ -53,4 +53,61 @@ describe('all tests for your functions',()=>{
     });
   });
 
+  //map
+
+  //filter
+
+  //reverseLettersInPlace
+  describe('reverseLettersInPlace tests',()=>{
+    const subReversed = allFunctions.reverseLettersInPlace;
+
+    it('should output a string',()=>{
+      assert.isString(subReversed('test'));
+      assert.isString(subReversed('test1 test2'));
+    });
+  });
+
+  //allSimpleCombinations
+
+  //alphabeticalOrder
+  describe('alphabeticalOrder tests',()=>{
+    const subAlphabetical = allFunctions.alphabeticalOrder;
+
+    it('should output a string',()=>{
+      assert.isString(subAlphabetical('test'));
+      assert.isString(subAlphabetical('test1 test2'));
+    });
+  });
+
+  //returnLongestWord
+  describe('returnLongestWord tests',()=>{
+    const subreturnLongestWord = allFunctions.returnLongestWord;
+
+    it('should output a string',()=>{
+      assert.isString(subreturnLongestWord('test'));
+      assert.isString(subreturnLongestWord('test1 test2'));
+    });
+  });
+
+  //isPrime
+  describe('isPrime tests',()=>{
+    const subisPrime = allFunctions.isPrime;
+
+    it('should output a boolean value',()=>{
+      assert.isBoolean(subisPrime('true'));
+      assert.isBoolean(subisPrime('false'));
+    });
+  });
+
+  //returnCoinBreakdown
+
+  //countVowels
+  describe('countVowels tests',()=>{
+    const subCountVowels = allFunctions.countVowels;
+
+    it('should output a boolean value',()=>{
+      assert.isNumber(subCountVowels(1));
+      assert.isNumber(subCountVowels(15));
+    });
+  });
 })
