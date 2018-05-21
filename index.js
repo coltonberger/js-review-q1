@@ -22,10 +22,13 @@ function subtract(num1,num2){
 
 //ANNOTATE HERE
 function calculateSum(array){
-  //WRITE YOUR CODE HERE
+  let sum = 0;
+  for (let i = 0; i < array.length; i++){
+    sum += array[i];
+  }
+  return sum;
 }
 
-//don't look up the answer!
 function forEach(){
 
 }
@@ -79,5 +82,5 @@ function countVowels(){
 module.exports = {
   add:add,
   subtract:subtract,
-  //add your functions here
+  calculateSum:calculateSum,
 }

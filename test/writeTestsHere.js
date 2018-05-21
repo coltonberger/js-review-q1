@@ -36,6 +36,21 @@ describe('all tests for your functions',()=>{
     });
   })
 
-  //
+  //calculateSum
+  describe('calculateSum tests',()=>{
+    const subSum = allFunctions.calculateSum;
+
+    it('should sum positive array',()=>{
+      assert.equal(subSum([1,2,3]),6);
+      assert.equal(subSum([4,5,6]),15);
+    })
+    it('should sum negative array',()=>{
+      assert.equal(subSum([-1,-2,-3]),-6);
+      assert.equal(subSum([-4,-5,-6]),-15);
+    })
+    it('should output number',()=>{
+      assert.isNumber(subSum([1,2,3]));
+    });
+  });
 
 })
