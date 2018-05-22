@@ -112,14 +112,14 @@ describe('all tests for your functions',()=>{
   describe('alphabeticalOrder tests',()=>{
     const subAlphabetical = allFunctions.alphabeticalOrder;
 
-    it('should output a string',()=>{
+    it('should output a String',()=>{
+      assert.isString(subAlphabetical('sailormoon'), 'ailmnooors');
+    });
+    it('should output a aklt',()=>{
       assert.deepEqual(subAlphabetical('talk'), 'aklt');
     });
-    it('should output aklt',()=>{
-      assert.deepEqual(subAlphabetical('talK'), 'aklt');
-    });
     it('should output ailmnooors',()=>{
-      assert.isString(subAlphabetical('sailomoon'), 'ailmnooors');
+      assert.deepEqual(subAlphabetical('sailormoon'), 'ailmnooors');
     });
   });
 
