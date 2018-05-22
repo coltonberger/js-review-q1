@@ -82,8 +82,6 @@ function reverseLettersInPlace(sentence) {
   }
   return reversed.split(' ').reverse().join(' ');
 }
-//reverseLettersInPlace("Hi justin") => "iH nitsuj"
-//reverseLettersInPlace(" A simple challenge! ") => => " A elpmis !egnellahc "
 
 /**
  * @name: simpleCombinations
@@ -102,8 +100,6 @@ function reverseLettersInPlace(sentence) {
    }
    return output;
  }
-//allSimpleCombinations('cat')  => ['c','ca','cat','a','at','t']
-//allSimpleCombinations('talk') => ['t','ta','tal','talk','a','al','alk','l','lk','k'];
 
 /**
  * @name: alphabeticalOrder
@@ -112,10 +108,8 @@ function reverseLettersInPlace(sentence) {
  * @return: ordered string
  **/
 function alphabeticalOrder(string) {
-  return string.split('').sort().join('');
+  return string.toLowerCase().split('').sort().join('');
 }
-//alphabeticalOrder('talk') => 'aklt'
-//alphabeticalOrder('sailormoon')  => 'ailmnooors'
 
 /**
  * @name: longestWord
@@ -134,8 +128,6 @@ function returnLongestWord(sentence) {
   }
   return longest;
 }
-//returnLongestWord('short sentence alphabetical') => 'alphabetical'
-//returnLongestWord('cute pretty beautiful pulchritudinous') => 'pulchritudinous'
 
 /**
  * @name: isPrime
@@ -154,8 +146,6 @@ function isPrime(num) {
   }
   return true;
 }
-//isPrime(7)  => true
-//isPrime(12) => false
 
 /**
  * @name: coinBreakdown
@@ -163,23 +153,18 @@ function isPrime(num) {
  * @param1: number
  * @return: object
  **/
-function returnCoinBreakdown(num) {
-  let quaters = Math.floor(num / 25);
-  let dimes = Math.floor((num % 25)/10);
-  let nickles = Math.floor((num % 10)/5);
-  let pennies = Math.floor(num % 5);
-
-  let output = {
-    25:quaters,
-    10:dimes,
-    5:nickles,
-    1:pennies
-  };
-
-  return output;
-}
-//returnCoinBreakdown(46) => {25:1,10:1,5:2,1:1}
-//returnCoinBreakdown(19) => {25:0,10:1,5:1,1:4}
+ function returnCoinBreakdown(num) {
+   let spareChange = 0;
+   let output = {};
+   output[25] = parseInt(num / 25);
+     spareChange = num % 25;
+   output[10] = parseInt(spareChange / 10);
+     spareChange = spareChange % 10;
+   output[5] = parseInt(spareChange / 5);
+     spareChange = spareChange % 5;
+   output[1] = spareChange;
+     return output;
+ }
 
 /**
  * @name: countVowels
@@ -200,9 +185,6 @@ function countVowels(word) {
 
   return count;
 }
-//countVowels('apple')  => 2
-//countVowels('tomato') => 3
-
 
 //BONUS
 function forEach(collection, callback) {
