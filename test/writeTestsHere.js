@@ -85,6 +85,14 @@ describe('all tests for your functions',()=>{
   });
 
   //allSimpleCombinations
+  describe('allSimpleCombinations tests',()=>{
+    const subAllSimpleCombinations = allFunctions.allSimpleCombinations;
+
+    it('should output all simpleCombinations',()=>{
+      assert.deepEqual(subAllSimpleCombinations('cat'), ['c','ca','cat','a','at','t']);
+      assert.deepEqual(subAllSimpleCombinations('talk'), ['t','ta','tal','talk','a','al','alk','l','lk','k']);
+    });
+  });
 
   //alphabeticalOrder
   describe('alphabeticalOrder tests',()=>{
@@ -117,6 +125,14 @@ describe('all tests for your functions',()=>{
   });
 
   //returnCoinBreakdown
+  describe('returnCoinBreakdown tests',()=>{
+    const subReturnCoinBreakdown = allFunctions.returnCoinBreakdown;
+
+    it('should output correct number and type of each coin',()=>{
+      assert.deepEqual(subReturnCoinBreakdown(46), {25:1,10:1,5:2,1:1});
+      assert.deepEqual(subReturnCoinBreakdown(19), {25:0,10:1,5:1,1:4});
+    });
+  });
 
   //countVowels
   describe('countVowels tests',()=>{

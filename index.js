@@ -91,9 +91,17 @@ function reverseLettersInPlace(sentence) {
  * @param1: string
  * @return: array of strings
  **/
-function allSimpleCombinations() {
-
-}
+ function allSimpleCombinations(str) {
+   let output = [];
+   for (let i = 0; i < str.length; i++) {
+     let word = str[i];
+     for (let x = i; x < str.length; x++) {
+         output.push(word);
+         word += str[x+1];
+     }
+   }
+   return output;
+ }
 //allSimpleCombinations('cat')  => ['c','ca','cat','a','at','t']
 //allSimpleCombinations('talk') => ['t','ta','tal','talk','a','al','alk','l','lk','k'];
 
@@ -155,8 +163,20 @@ function isPrime(num) {
  * @param1: number
  * @return: object
  **/
-function returnCoinBreakdown() {
+function returnCoinBreakdown(num) {
+  let quaters = Math.floor(num / 25);
+  let dimes = Math.floor((num % 25)/10);
+  let nickles = Math.floor((num % 10)/5);
+  let pennies = Math.floor(num % 5);
 
+  let output = {
+    25:quaters,
+    10:dimes,
+    5:nickles,
+    1:pennies
+  };
+
+  return output;
 }
 //returnCoinBreakdown(46) => {25:1,10:1,5:2,1:1}
 //returnCoinBreakdown(19) => {25:0,10:1,5:1,1:4}
