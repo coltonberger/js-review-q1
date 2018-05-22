@@ -53,9 +53,26 @@ describe('all tests for your functions',()=>{
     });
   });
 
-  //map
+  // map
+  describe('map tests', () => {
+    const subMap = allFunctions.map;
 
-  //filter
+    it('should return a new array with every element tripled', () => {
+      const triple = function(num) { return num * 3 };
+      assert.deepEqual(subMap([1, 2, 3], triple), [3, 6, 9]);
+    });
+  });
+
+  // filter
+  describe('filter tests', () => {
+    const subFunc = allFunctions.filter;
+
+    it('should return only even numbers', () => {
+      const isEven = function(num) { return num % 2 === 0; };
+      assert.deepEqual(subFunc([0, 1, 2, 3], isEven), [0, 2]);
+    });
+  });
+
 
   //reverseLettersInPlace
   describe('reverseLettersInPlace tests',()=>{
@@ -105,7 +122,7 @@ describe('all tests for your functions',()=>{
   describe('countVowels tests',()=>{
     const subCountVowels = allFunctions.countVowels;
 
-    it('should output a boolean value',()=>{
+    it('should output a number value',()=>{
       assert.isNumber(subCountVowels(1));
       assert.isNumber(subCountVowels(15));
     });
